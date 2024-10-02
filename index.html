@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jara Technologies</title>
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bd-coming-soon.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            overflow: hidden; /* Prevent scrollbars during animation */
+        }
+
+        .navbar-text {
+            position: relative;
+            display: inline-block;
+        }
+
+        .navbar-text::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: black;
+            bottom: -5px; /* Adjust the distance between text and underline */
+            left: 0;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+
+        .navbar-text:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        .navbar-text:hover {
+            color: white;
+        }
+
+        .footer-social-links .social-link:hover {
+            color: white;
+        }
+
+        .page-title {
+            font-size: 2rem; /* Adjust the font size as needed */
+        }
+
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('assets/images/bg.jpg') no-repeat center center/cover;
+            z-index: -1;
+            animation: zoomInOut 15s infinite;
+        }
+
+        @keyframes zoomInOut {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+    </style>
+</head>
+
+<body class="min-vh-100 d-flex flex-column">
+
+    <div class="background-image"></div>
+
+    <header>
+        <div class="container">
+            <nav class="navbar navbar-dark bg-transparent">
+                <a class="navbar-brand" href="#">
+                    <img src="assets/images/logo.svg" alt="logo" style="width: 100px; height: 100px; object-fit: cover;">
+                </a>
+                <span class="navbar-text ml-auto d-none d-sm-inline-block">+965 66756452</span>
+                <span class="navbar-text d-none d-sm-inline-block">ask@meet-jara.com</span>
+            </nav>
+        </div>
+    </header>
+    <main class="my-auto">
+        <div class="container">
+            <h1 class="page-title">We're coming soon</h1>
+            <p class="page-description">Our website is under construction, but we are working hard to create a new experience for you. Stay tuned!</p>
+            <p>Stay connected</p>
+            <nav class="footer-social-links">
+                <a href="https://www.meetjara.com/" class="social-link" target="_blank"><i class="mdi mdi-google"></i></a>
+                <a href="https://www.linkedin.com/company/meetjara/" class="social-link" target="_blank"><i class="mdi mdi-linkedin"></i></a>
+                <a href="https://www.instagram.com/meetjara.kw/" class="social-link" target="_blank"><i class="mdi mdi-instagram"></i></a>
+                <a href="mailto:ask@meet-jara.com" class="social-link" target="_blank"><i class="mdi mdi-email"></i></a>
+                <a href="https://wa.me/96566756452" class="social-link" target="_blank"><i class="mdi mdi-whatsapp"></i></a>
+            </nav>
+        </div>
+    </main>
+</body>
+
+</html>
