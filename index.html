@@ -137,20 +137,17 @@
     <!-- Main Section Start -->
     <section id="main" class="main full">
       <div class="fullscreen-wrapper">
-
-        <!-- Fullscreen Background Start-->
-        <div class="fullscreen-bg media-full-1">
-          <!-- local video background -->
-          <div class="video-background">
-            <video id="main-video" preload="auto" autoplay="autoplay" loop="loop" muted="muted" poster="https://firebasestorage.googleapis.com/v0/b/menaialwyschool.appspot.com/o/IMG_5319.PNG?alt=media&token=5a2746d5-f4b0-4795-be3f-21631b93e4b5">
-              <source type="video/mp4" src="https://vimeo.com/1015256174?share=copy">
-              <source type="video/webm" src="https://vimeo.com/1015256174?share=copy">
-              <source type="video/ogv" src="https://vimeo.com/1015256174?share=copy">
-            </video>
-          </div>
-          <!-- Dark gradient cover layer -->
-          <div class="color-layer layer-dark-06"></div>
+      <!-- Fullscreen Background Start-->
+      <div class="fullscreen-bg media-full-1">
+        <!-- Vimeo video background -->
+        <div class="video-background">
+          <div id="vimeo-player"></div>
         </div>
+        <!-- Dark gradient cover layer -->
+        <div class="color-layer layer-dark-06"></div>
+      </div>
+    </div>
+  
         <!-- Fullscreen Background End-->
 
         <!-- Main Section Content Start -->
@@ -833,6 +830,20 @@
     </div>
 
     <!-- Load Scripts Start -->
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script>
+      var options = {
+        id: 1015256174, // Replace with your Vimeo video ID
+        background: true,
+        autoplay: true,
+        loop: true,
+        muted: true
+      };
+  
+      var player = new Vimeo.Player('vimeo-player', options);
+  
+      player.setVolume(0); // Ensure the video is muted
+    </script>
     <script src="js/libs.min.js"></script>
     <script src="js/gallery-init.js"></script>
     <script src="js/custom.js"></script>
