@@ -104,7 +104,7 @@
 
             <!-- Logo Start -->
             <div class="logo">
-              <img src="img/logo.svg" alt="Jara - Coming Soon">
+              <img src="img/logo.svg" alt="Ignite - Coming Soon and Landing Page Template">
             </div>
             <!-- Logo End -->
 
@@ -137,17 +137,27 @@
     <!-- Main Section Start -->
     <section id="main" class="main full">
       <div class="fullscreen-wrapper">
-      <!-- Fullscreen Background Start-->
-      <div class="fullscreen-bg media-full-1">
-        <!-- Vimeo video background -->
-        <div class="video-background">
-          <div id="vimeo-player"></div>
+
+        <!-- Fullscreen Background Start-->
+        <div class="fullscreen-bg media-full-1">
+          <!-- local video background -->
+          <div class="video-background">
+            <div id="video-container">
+              <div id="poster-image" style="
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                  color: #000;
+                  background-size: cover;
+                  z-index: 1;
+              "></div>
+            <div id="vimeo-player"></div>
+          </div>
+          <!-- Dark gradient cover layer -->
+          <div class="color-layer layer-dark-06"></div>
         </div>
-        <!-- Dark gradient cover layer -->
-        <div class="color-layer layer-dark-06"></div>
-      </div>
-    </div>
-  
         <!-- Fullscreen Background End-->
 
         <!-- Main Section Content Start -->
@@ -163,7 +173,7 @@
 
                   <!-- Headline Start -->
                   <div id="headline" class="headline centered-mobile text-center">
-                    <span class="headline__subtitle">Coming soon</span>
+                    <span class="headline__subtitle">Coming Soon</span>
                     <div class="d-md-flex align-items-md-center justify-content-md-center">
                       <h2 class="headline__title title-centered">Big changes are on the way!</h2>
                     </div>
@@ -172,7 +182,7 @@
                         <span class="btn-title">Notify me</span>
                         <span class="btn-hover">Notify me</span>
                       </a>
-                      <a  href="https://vimeo.com/1015241876" id="showreel-trigger" class="btn btn-l-icon btn-outline-light">
+                      <a  href="https://vimeo.com/1015241876?share=copy" id="showreel-trigger" class="btn btn-l-icon btn-outline-light">
                         <span class="btn-icon-title">Play Showreel</span>
                         <span class="btn-icon-anim"><i class="fa-solid fa-play"></i></span>
                       </a>
@@ -192,9 +202,21 @@
                           <!-- Home screen socials links -->
                           <ul class="socials d-flex align-items-start">
                             <li>
+                              <a class="btn btn-s-text" href="https://www.facebook.com/" target="_blank">
+                                <span class="title">Fb</span>
+                                <span class="hover">Fb</span>
+                              </a>
+                            </li>
+                            <li>
                               <a class="btn btn-s-text" href="https://www.instagram.com" target="_blank">
                                 <span class="title">In</span>
                                 <span class="hover">In</span>
+                              </a>
+                            </li>
+                            <li>
+                              <a class="btn btn-s-text" href="https://twitter.com/" target="_blank">
+                                <span class="title">Tw</span>
+                                <span class="hover">Tw</span>
                               </a>
                             </li>
                             <li>
@@ -602,20 +624,27 @@
               <!-- Home screen socials links -->
               <ul class="socials">
                 <li>
-                  <a class="btn btn-s-text" href="https://www.instagram.com/meetjara.kw/?hl=en" target="_blank">
-                    <span class="title"><i class="fab fa-instagram"></i></span>
-                    <span class="hover"><i class="fab fa-instagram"></i></span>
+                  <a class="btn btn-s-text" href="https://www.facebook.com/" target="_blank">
+                    <span class="title">Fb</span>
+                    <span class="hover">Fb</span>
                   </a>
                 </li>
                 <li>
-                  <a class="btn btn-s-text" href="https://www.linkedin.com/company/meetjara/" target="_blank">
-                    <span class="title"><i class="fab fa-linkedin"></i></span>
-                    <span class="hover"><i class="fab fa-linkedin"></i></span>
+                  <a class="btn btn-s-text" href="https://www.instagram.com" target="_blank">
+                    <span class="title">In</span>
+                    <span class="hover">In</span>
                   </a>
                 </li>
                 <li>
-                  <a class="btn btn-s-text" href="https://wa.me/96566756452" target="_blank">
-                    <span class="title"><i class="fab fa-whatsapp"></i></span>
+                  <a class="btn btn-s-text" href="https://twitter.com/" target="_blank">
+                    <span class="title">Tw</span>
+                    <span class="hover">Tw</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="btn btn-s-text" href="https://www.behance.net/" target="_blank">
+                    <span class="title">Be</span>
+                    <span class="hover">Be</span>
                   </a>
                 </li>
               </ul>
@@ -693,72 +722,67 @@
     <!-- Say Hello Popup Start -->
     <div id="sayhello" class="popup sayhello">
       <div class="popup__container">
-    
+
         <!-- Popup Content Start -->
         <div class="popup__content block-rounded-s">
-    
+
           <!-- popup close button -->
           <a href="#0" id="sayhello-close" class="popup-close">
             <i class="fa-solid fa-xmark"></i>
           </a>
-    
+
           <!-- Say Hello Popup Title Start -->
           <div class="popup-title">
             <p class="popup-title__title">Let's talk!</p>
           </div>
           <!-- Say Hello Popup Title End -->
-    
+
           <!-- Say Hello Form Container Start -->
           <div class="form-container">
-    
+
             <!-- Reply Messages Start-->
-            <div class="reply-group sayhello-ok" style="display: none;">
+            <div class="reply-group">
               <i class="fa-solid fa-circle-check reply-group__icon"></i>
-              <p class="reply-group__title txt-light">Done!</p>
-              <span class="reply-group__text">Thanks for your message. We will get back as soon as possible.</span>
-            </div>
-            <div class="reply-group sayhello-error" style="display: none;">
-              <i class="fa-solid fa-face-frown-open reply-group__icon"></i>
-              <p class="reply-group__title">Ooops!</p>
-              <span class="reply-group__text">Something went wrong. Please try again later.</span>
+              <p class="reply-group__title">Done!</p>
+              <span class="reply-group__text">Thanks for your message. We will get back as soon as possible</span>
             </div>
             <!-- Reply Messages End-->
-    
+
             <!-- Contact Form Start -->
             <form class="form form-light sayhello-form" id="sayhello-form">
               <!-- Hidden Required Fields -->
-              <!-- <input type="hidden" name="project_name" value="Ignite - Coming Soon and Landing Page Template">
+              <input type="hidden" name="project_name" value="Ignite - Coming Soon and Landing Page Template">
               <input type="hidden" name="admin_email" value="support@mixdesign.club">
-              <input type="hidden" name="form_subject" value="Contact Form Message"> -->
+              <input type="hidden" name="form_subject" value="Contact Form Message">
               <!-- END Hidden Required Fields-->
               <div class="container-fluid px-0">
-                  <div class="row gx-5">
-                      <div class="col-12 col-md-6">
-                          <input class="" type="text" name="Name" id="name" placeholder="Your Name" required>
-                      </div>
-                      <div class="col-12 col-md-6">
-                          <input class="" type="email" name="Email" id="email" placeholder="Your Email" required>
-                      </div>
-                      <div class="col-12">
-                          <textarea class="margin-l" name="Message" id="message" placeholder="A Few Words" required></textarea>
-                      </div>
-                      <div class="col-12">
-                          <button class="btn btn-l btn-light" type="submit">
-                              <span class="btn-title">Send</span>
-                              <span class="btn-hover">Send</span>
-                          </button>
-                      </div>
+                <div class="row gx-5">
+                  <div class="col-12 col-md-6">
+                    <input class="" type="text" name="Name" placeholder="Your Name" required>
                   </div>
+                  <div class="col-12 col-md-6">
+                    <input class="" type="text" name="Company" placeholder="Your Email" required>
+                  </div>
+                  <div class="col-12">
+                    <textarea class="margin-l" name="Message" placeholder="A Few Words" required></textarea>
+                  </div>
+                  <div class="col-12">
+                    <button class="btn btn-l btn-light" type="submit">
+                      <span class="btn-title">Send</span>
+                      <span class="btn-hover">Send</span>
+                    </button>
+                  </div>
+                </div>
               </div>
             </form>
             <!-- Contact Form End  -->
-    
+
           </div>
           <!-- Say Hello Form Container End -->
-    
+
         </div>
         <!-- Popup Content End -->
-    
+
       </div>
     </div>
     <!-- Say Hello Popup End -->
@@ -830,52 +854,41 @@
     </div>
 
     <!-- Load Scripts Start -->
-    <script src="https://player.vimeo.com/api/player.js"></script>
-    <script>
-      var options = {
-        id: 1015256174, // Replace with your Vimeo video ID
-        background: true,
-        autoplay: true,
-        loop: true,
-        muted: true
-      };
-  
-      var player = new Vimeo.Player('vimeo-player', options);
-  
-      player.setVolume(0); // Ensure the video is muted
-    </script>
     <script src="js/libs.min.js"></script>
     <script src="js/gallery-init.js"></script>
     <script src="js/custom.js"></script>
+    <script src="https://player.vimeo.com/api/player.js"></script>
     <script>
-      document.getElementById('sayhello-form').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent the default form submission
-      
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-        const script = document.createElement('script');
-        const callbackName = 'jsonpCallback';
-        document.querySelector('.sayhello-ok').style.display = 'block';
-      
-        // window[callbackName] = function(data) {
-        //   if (data.result === 'success') {
-        //     document.querySelector('.sayhello-ok').style.display = 'block';
-        //     document.querySelector('.sayhello-error').style.display = 'none';
-        //   } else {
-        //     document.querySelector('.sayhello-ok').style.display = 'none';
-        //     document.querySelector('.sayhello-error').style.display = 'block';
-        //   }
-        //   document.getElementById('sayhello-form').reset();
-        //   delete window[callbackName];
-        // };
-      
-        // Replace with your actual endpoint or use a service like Formspree
-        // const endpoint = `https://example.com/submit-form?callback=${callbackName}&name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&message=${encodeURIComponent(message)}`;
-        // script.src = endpoint;
-        //document.body.appendChild(script);
-      });
-      </script>
+        function updatePlayerSize() {
+            var screenWidth = window.innerWidth;
+            var screenHeight = screenWidth * 9 / 16;
+
+            player.element.width = screenWidth;
+            player.element.height = screenHeight;
+        }
+
+        var options = {
+            id: 1015256174, // Replace with your Vimeo video ID
+            width: window.innerWidth,
+            height: window.innerWidth * 9 / 16,
+            loop: true,
+            autoplay: true,
+            muted: true,
+            background: true
+        };
+
+        var player = new Vimeo.Player('vimeo-player', options);
+
+        player.setVolume(0); // Ensure the video is muted
+
+        // Hide the poster image once the video is ready to play
+        player.on('loaded', function() {
+            document.getElementById('poster-image').style.display = 'none';
+        });
+
+        // Update player size on window resize
+        window.addEventListener('resize', updatePlayerSize);
+    </script>
     <!-- Load Scripts End -->
 
   </body>
