@@ -5,7 +5,7 @@
     <meta charset="utf-8">
 
     <!-- Page Title-->
-    <title>Jara Technologies</title>
+    <title>Jara</title>
 
     <!-- Meta Tags-->
     <meta name="description" content="Ignite - functional and beautifully designed coming soon and landing page template to kick-start your project">
@@ -153,6 +153,11 @@
                   background-size: cover;
                   z-index: 1;
               "></div>
+               <video id="main-video" preload="auto" autoplay="autoplay" loop="loop" muted="muted" poster="https://firebasestorage.googleapis.com/v0/b/menaialwyschool.appspot.com/o/IMG_5319.PNG?alt=media&token=5a2746d5-f4b0-4795-be3f-21631b93e4b5">
+                <source type="video/mp4" src="img\video.mp4">
+                <source type="video/webm" src="https://vimeo.com/1015256174?share=copy">
+                <source type="video/ogv" src="https://vimeo.com/1015256174?share=copy">
+              </video>
             <div id="vimeo-player"></div>
           </div>
           <!-- Dark gradient cover layer -->
@@ -859,35 +864,60 @@
     <script src="js/custom.js"></script>
     <script src="https://player.vimeo.com/api/player.js"></script>
     <script>
-        function updatePlayerSize() {
-            var screenWidth = window.innerWidth;
-            var screenHeight = screenWidth * 9 / 16;
+      document.addEventListener("DOMContentLoaded", function() {
+  var player;
 
-            player.element.width = screenWidth;
-            player.element.height = screenHeight;
+  function initializeVimeoPlayer() {
+    var vimeoPlayerDiv = document.getElementById('vimeo-player');
+    if (window.innerWidth >= 768 && vimeoPlayerDiv) {
+      var options = {
+        id: 1015256174, // Replace with your Vimeo video ID
+        width: window.innerWidth,
+        height: window.innerWidth * 9 / 16,
+        loop: true,
+        autoplay: true,
+        muted: true,
+        background: true
+      };
+
+      player = new Vimeo.Player(vimeoPlayerDiv, options);
+
+      player.setVolume(0); // Ensure the video is muted
+
+      // Hide the poster image once the video is ready to play
+      player.on('loaded', function() {
+        var posterImage = document.getElementById('poster-image');
+        if (posterImage) {
+          posterImage.style.display = 'none';
         }
+      });
+    }
+  }
 
-        var options = {
-            id: 1015256174, // Replace with your Vimeo video ID
-            width: window.innerWidth,
-            height: window.innerWidth * 9 / 16,
-            loop: true,
-            autoplay: true,
-            muted: true,
-            background: true
-        };
+  function updatePlayerSize() {
+    if (player) {
+      var screenWidth = window.innerWidth;
+      var screenHeight = screenWidth * 9 / 16;
 
-        var player = new Vimeo.Player('vimeo-player', options);
+      player.element.width = screenWidth;
+      player.element.height = screenHeight;
+    }
+  }
 
-        player.setVolume(0); // Ensure the video is muted
+  // Initialize the Vimeo player on page load if the screen is large enough
+  initializeVimeoPlayer();
 
-        // Hide the poster image once the video is ready to play
-        player.on('loaded', function() {
-            document.getElementById('poster-image').style.display = 'none';
-        });
-
-        // Update player size on window resize
-        window.addEventListener('resize', updatePlayerSize);
+  // Re-initialize the Vimeo player on window resize
+  window.addEventListener('resize', function() {
+    // Remove the existing player if it exists
+    var vimeoPlayerDiv = document.getElementById('vimeo-player');
+    if (vimeoPlayerDiv && vimeoPlayerDiv.firstChild) {
+      vimeoPlayerDiv.removeChild(vimeoPlayerDiv.firstChild);
+    }
+    initializeVimeoPlayer();
+    updatePlayerSize();
+  });
+});
     </script>
     <!-- Load Scripts End -->
 
